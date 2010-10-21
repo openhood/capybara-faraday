@@ -11,7 +11,9 @@ class Capybara::Driver::Faraday < Capybara::Driver::Base
   attr_reader :app, :rack_server, :options, :response
   
   def client
-    @client ||= Faraday::Connection.new
+    @client ||= Faraday::Connection.new do |c|
+      c.adapter(@options[:adapter] || :net_http)
+    end
   end
   
   def initialize(app, options={})
