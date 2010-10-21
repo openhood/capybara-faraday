@@ -1,6 +1,6 @@
 require 'bundler/setup'
 require 'capybara'
-require 'capybara/restfulie'
+require 'capybara/faraday'
 
 require 'sinatra'
 

@@ -1,29 +1,27 @@
 Capybara-restfulie
 ==================
 
-This gems makes it possible to use [Restfulie](http://github.com/caelum/restfulie) for remote testing.
-
-It is currently in use to test a REST API backed by Rails 3 and Restfulie.
+This gems makes it possible to use [Faraday](http://github.com/technoweenie/faraday) for remote testing.
 
 This gem is a [Capybara](http://github.com/jnicklas/capybara) extension. The structure of the gem is taken from the work done on [Capybara-mechanize](http://github.com/jeroenvandijk/capybara-mechanize).
 
 ### Installation
 
-    gem install capybara-restfulie
+    gem install capybara-faraday
 
 ### Usage without Cucumber
 
-    require 'capybara/restfulie'
+    require 'capybara/faraday'
 
 ### Usage with Cucumber and tags
 
-A @restfulie tag is added to your hooks when you add the following line to your env.rb
+A @faraday tag is added to your hooks when you add the following line to your env.rb
 
-    require 'capybara/restfulie/cucumber'
+    require 'capybara/faraday/cucumber'
 
-The following scenario will then be using the Restfulie driver
+The following scenario will then be using the Faraday driver
 
-    @restfulie
+    @faraday
     Scenario: do something with the API
       Given I send and accept JSON
       When I send a GET request to /users
@@ -72,4 +70,4 @@ Note on Patches/Pull Requests
 
 Copyright
 ---------
-Copyright (c) 2010 Tron Jonathan. See LICENSE for details.
+Copyright (c) 2010 Tron Jonathan and HALTER Joseph. See LICENSE for details.

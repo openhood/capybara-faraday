@@ -3,7 +3,7 @@ require "faraday"
 class Capybara::Driver::Faraday < Capybara::Driver::Base
   class Node < Capybara::Driver::RackTest::Node
     def click
-      driver.process(:get, self[:href].to_s) if self[:href].present?
+      driver.process(:get, self[:href].to_s) if self[:href] && self[:href] != ""
     end
   end
 
@@ -11,9 +11,7 @@ class Capybara::Driver::Faraday < Capybara::Driver::Base
   attr_reader :app, :rack_server, :options, :response
   
   def client
-    @client ||= Faraday::Connection.new do |con|
-      con.adapter :typhoeus
-    end
+    @client ||= Faraday::Connection.new
   end
   
   def initialize(app, options={})
