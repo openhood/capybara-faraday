@@ -26,6 +26,22 @@ The following scenario will then be using the Faraday driver
       Given I send and accept JSON
       When I send a GET request to /users
       
+If you want to use a specific faraday supported adapter, you need to install the dependency and then specify the tag matching it:
+
+To use Typhoeus
+
+    @faraday_typhoeus
+    Scenario: do something with the API
+      Given I send and accept JSON
+      When I send a GET request to /users
+    
+To use Patron
+
+    @faraday_patron
+    Scenario: do something with the API
+      Given I send and accept JSON
+      When I send a GET request to /users    
+      
 ### Remote testing
 
 When you want to use this driver to test a remote application. You have to set the app_host:
