@@ -1,6 +1,0 @@
-infinity_test do
-  notifications :growl do
-   show_images :mode => :mario_bros
-  end
-  use :rubies => %w(1.9.2@capybara-faraday), :test_framework => :rspec
-end
